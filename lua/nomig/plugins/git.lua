@@ -19,6 +19,7 @@ return {
 					end
 					return str
 				end
+
 				require("blame").setup({
 					colors = {
 						"#29c4d6",
@@ -29,8 +30,6 @@ return {
 					},
 					format_fn = function(line_porcelain, config, idx)
 						local hash = string.sub(line_porcelain.hash, 0, 7)
-						local line_with_hl = {}
-						local is_commited = hash ~= "0000000"
 						local summary
 						if #line_porcelain.summary > config.max_summary_width then
 							summary = string.sub(line_porcelain.summary, 0, config.max_summary_width - 3) .. "..."

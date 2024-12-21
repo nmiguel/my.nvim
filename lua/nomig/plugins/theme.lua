@@ -91,6 +91,13 @@ return {
 					hl.BlinkCmpSignatureHelp = hl.Float
 					hl.BlinkCmpSignatureHelpBorder = hl.TelescopeBorder
 					hl.BlinkCmpSignatureHelpActiveParameter = hl.LspSignatureActiveParameter
+
+					hl.LspInlayHint = {
+						fg = hl.Comment.fg,
+						bg = "none",
+						italic = true,
+						-- underline = true,
+					}
 				end,
 			})
 			vim.cmd("colorscheme tokyonight")
