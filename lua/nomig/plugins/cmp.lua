@@ -5,8 +5,7 @@ return {
 	version = "v0.*",
 
 	config = function()
-		---@diagnostic disable: missing-fields
-        local rounded_border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" }
+		local rounded_border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" }
 		require("blink.cmp").setup({
 			appearance = {
 				nerd_font_variant = "normal",
@@ -14,6 +13,17 @@ return {
 
 			keymap = {
 				preset = "default",
+                -- Allow tab to accept in cmdline
+				-- ["<Tab>"] = {
+				-- 	function(_)
+				-- 		if vim.api.nvim_get_mode().mode == "c" then
+				-- 			return
+				-- 		end
+				-- 		return true
+				-- 	end,
+				-- 	"accept",
+				-- },
+                -- TODO: add back the default tab function
 			},
 
 			completion = {
@@ -30,17 +40,21 @@ return {
 
 				documentation = {
 					auto_show = true,
+					auto_show_delay_ms = 100,
 					window = {
 						border = rounded_border,
 					},
 				},
-
-				signature = {
-					enabled = true,
-					window = {
-						border = rounded_border,
-					},
+			},
+			signature = {
+				enabled = true,
+				window = {
+					border = rounded_border,
 				},
+			},
+			sources = {
+				default = { "lsp", "path", "buffer" },
+                cmdline = {}
 			},
 		})
 	end,
