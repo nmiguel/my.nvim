@@ -88,6 +88,7 @@ return {
 					-- Additional Blink Highlight Groups
 					hl.BlinkCmpDoc = hl.Float
 					hl.BlinkCmpDocBorder = hl.TelescopeBorder
+					hl.BlinkCmpLabelMatch = { fg = c.purple, bg = "none" }
 					hl.BlinkCmpSignatureHelp = hl.Float
 					hl.BlinkCmpSignatureHelpBorder = hl.TelescopeBorder
 					hl.BlinkCmpSignatureHelpActiveParameter = hl.LspSignatureActiveParameter
