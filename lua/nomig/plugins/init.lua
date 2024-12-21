@@ -45,22 +45,10 @@ return {
 	},
 	"stevearc/dressing.nvim",
 	{
-		"mikavilpas/yazi.nvim",
-		event = "VeryLazy",
-		config = function()
-			vim.keymap.set("n", "-", "<cmd>Yazi<CR>", { noremap = true, silent = true })
-			require("yazi").setup({
-				open_for_directories = true,
-				keymaps = { show_help = "?" },
-			})
-		end,
-	},
-	{
 		"levouh/tint.nvim",
 		enabled = false,
 		opts = {},
 	},
-	-- { "plax-00/endscroll.nvim", opts = {} },
 	{
 		"echasnovski/mini.surround",
 		event = { "VeryLazy" },
@@ -79,27 +67,6 @@ return {
 		config = function()
 			require("YankAssassin").setup({
 				auto = true,
-			})
-		end,
-	},
-	{
-		"meznaric/key-analyzer.nvim",
-		config = function()
-			require("key-analyzer").setup({
-				-- Name of the command to use for the plugin
-				command_name = "KeyAnalyzer", -- or nil to disable the command
-
-				-- Customize the highlight groups
-				highlights = {
-					bracket_used = "KeyAnalyzerBracketUsed",
-					letter_used = "KeyAnalyzerLetterUsed",
-					bracket_unused = "KeyAnalyzerBracketUnused",
-					letter_unused = "KeyAnalyzerLetterUnused",
-					promo_highlight = "KeyAnalyzerPromo",
-
-					-- Set to false if you want to define highlights manually
-					define_default_highlights = true,
-				},
 			})
 		end,
 	},
