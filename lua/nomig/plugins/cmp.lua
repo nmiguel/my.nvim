@@ -13,6 +13,16 @@ return {
 
 			keymap = {
 				preset = "default",
+                -- Allow tab to accept in cmdline
+				["<Tab>"] = {
+					function(_)
+						if vim.api.nvim_get_mode().mode == "c" then
+							return
+						end
+						return true
+					end,
+					"accept",
+				},
 			},
 
 			completion = {
